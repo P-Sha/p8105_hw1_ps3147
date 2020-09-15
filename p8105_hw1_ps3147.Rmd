@@ -1,11 +1,8 @@
 ---
-title: "p8105_hw1_ps3147"
-author: "Purnima Sharma"
+title: "Homework 1"
+author: Purnima Sharma
 date: "9/15/2020"
 output: github_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
+Solutions to HW1:
