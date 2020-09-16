@@ -37,6 +37,7 @@ mean(pull(Prob1_df, factor_vec))
 
 I can take the mean of numbers and logical variables but not character or factor variables.
 
+
 ```{r}
 as.numeric(pull(Prob1_df, samp))
 as.numeric(pull(Prob1_df, samp_gt_0))
@@ -44,6 +45,33 @@ as.numeric(pull(Prob1_df, char_vec))
 as.numeric(pull(Prob1_df, factor_vec))
 ```
 
+Logical variable is converted to binary code of 0 and 1, conversion does not work for character, and factor gets converted. Explains why character has no mean.
+
+
+converting logical vector to numeric, and multiplying numeric by the result
+
+```{r}
+as.numeric(pull(Prob1_df, samp_gt_0)) * pull(Prob1_df, samp)
+```
+
+
+
+converting logical vector to factor, and multiplying numeric by the result
+
+```{r}
+as.factor(pull(Prob1_df, samp_gt_0)) * pull(Prob1_df, samp)
+```
+Not a possible operation.
+
+
+converting logical to factor, and the result to numeric,  and multiplying numeric by the result
+
+```{r}
+as.numeric(as.factor(pull(Prob1_df, samp_gt_0))) * pull(Prob1_df, samp)
+```
+End problem 1.
 
 
 ## Problem 2
+
+
