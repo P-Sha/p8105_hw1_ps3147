@@ -74,4 +74,39 @@ End problem 1.
 
 ## Problem 2
 
+Create plots to check behavior of ggplots for variables of different types, using Penguins dataset.
+ 
+ First we load the "penguins" dataset.
+ 
+```{r load data}
+data("penguins", package = "palmerpenguins")
+```
 
+
+### Data description
+
+   The data frame consists of data on penguins based on 8 variables: species, island of habitat, bill length, bill depth, flipper length, body mass, sex and year data collected.
+   
+  Names of species.
+   
+```{r names}
+pull(penguins, species)
+```
+   
+   The data consists of names of 3 species called Adelie, Chinstrap and Gentoo.
+   
+   Values of important variables.
+   
+```{r variable-values}
+
+
+```
+   
+      
+
+ The data frame has `r nrow(penguins)` rows and `r ncol(penguins)` columns.
+ 
+
+The mean flipper length is `r mean(pull(na.omit(penguins, flipper_length_mm)))` mm.
+ 
+ 
