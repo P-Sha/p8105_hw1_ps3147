@@ -114,13 +114,13 @@ Code chunk for Scatterplot of flipper_length vs bill_length, using the "species"
  
 ```{r scatterplot}
 plot_df = tibble(
-   x = pull(penguins, flipper_length_mm),
-   y = pull(penguins, bill_length_mm)
+   x = pull(penguins, bill_length_mm),
+   y = pull(penguins, flipper_length_mm)
 )
 
 ggplot(plot_df, aes(x = x, 
                     y = y, 
-                    color = pull(penguins, species))) + geom_point() + labs(title = "Scatterplot: flipper length vs bill length", x = "flipper length (mm)", y = "bill length (mm)")
+                    color = pull(penguins, species))) + geom_point() + labs(title = "Scatterplot: flipper length vs bill length", x = "bill length (mm)", y = "flipper length (mm)")
 
 ggsave("HW1_scatterplot.pdf", height = 4, width = 6)  
 
