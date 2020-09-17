@@ -85,27 +85,26 @@ data("penguins", package = "palmerpenguins")
 
 ### Data description
 
-   The data frame consists of data on penguins based on 8 variables: species, island of habitat, bill length, bill depth, flipper length, body mass, sex and year data collected.
+   The dataset consists of information on penguins based on 8 variables. 
    
-  Names of species.
-   
-```{r names}
-pull(penguins, species)
-```
-   
-   The data consists of names of 3 species called Adelie, Chinstrap and Gentoo.
-   
-   Values of important variables.
-   
-```{r variable-values}
-
+    ```{r variable names}
+names(penguins)
 
 ```
    
-      
-
+ 1. *Species* is a variable of type `r class(pull(penguins, species))`, with values of `r unique(pull(penguins, species))`.
+ 2.  *Island* is a variable of type `r class(pull(penguins, island))`, with values of `r unique(pull(penguins, island))`.
+ 3.  *Bill_length_mm* is a variable of type `r class(pull(penguins, bill_length_mm))`.
+ 4.  *Bill_depth_mm* is a variable of type `r class(pull(penguins, bill_depth_mm))`.
+ 5.  *Flipper_length_mm* is a variable of type `r class(pull(penguins, flipper_length_mm))`.
+ 6.  *Body_mass_g* is a variable of type `r class(pull(penguins, body_mass_g))`.
+ 7.  *Sex* is a variable of type `r class(pull(penguins, sex))`.
+ 8. *Year* is a variable of type `r class(pull(penguins, year))`, with values of `r unique(pull(penguins, year))`.
+   
+    
  The data frame has `r nrow(penguins)` rows and `r ncol(penguins)` columns.
  
+
 
 The mean flipper length is `r mean(pull(na.omit(penguins, flipper_length_mm)))` mm.
  
