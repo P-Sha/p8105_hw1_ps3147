@@ -74,7 +74,7 @@ End problem 1.
 
 ## Problem 2
 
-Create plots to check behavior of ggplots for variables of different types, using Penguins dataset.
+Create a scatterplot to check behavior of ggplots for variables of different types, using Penguins dataset.
  
  First we load the "penguins" dataset.
  
@@ -105,7 +105,26 @@ names(penguins)
  The data frame has `r nrow(penguins)` rows and `r ncol(penguins)` columns.
  
 
-
-The mean flipper length is `r mean(pull(na.omit(penguins, flipper_length_mm)))` mm.
+The mean flipper length is `r round(mean(pull(na.omit(penguins, flipper_length_mm)), digits = 2))` mm.
  
+ 
+### Data visuals
+ 
+Code chunk for Scatterplot of flipper_length vs bill_length, using the "species" variable.
+ 
+```{r scatterplot}
+plot_df = tibble(
+   x = pull(penguins, flipper_length_mm),
+   y = pull(penguins, bill_length_mm)
+)
+
+ggplot(plot_df, aes(x = x, 
+                    y = y, 
+                    color = pull(penguins, species))) + geom_point() + labs(title = "Scatterplot: flipper length vs bill length", x = "flipper length (mm)", y = "bill length (mm)")
+
+ggsave("HW1_scatterplot.pdf", height = 4, width = 6)  
+
+```
+End problem 2. 
+
  
