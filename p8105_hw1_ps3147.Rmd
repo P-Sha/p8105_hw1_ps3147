@@ -105,7 +105,7 @@ names(penguins)
  The data frame has `r nrow(penguins)` rows and `r ncol(penguins)` columns.
  
 
-The mean flipper length is `r round(mean(pull(na.omit(penguins, flipper_length_mm)), digits = 2))` mm.
+The mean flipper length is `r round(mean(na.omit(pull(penguins, flipper_length_mm)), digits = 2))` mm.
  
  
 ### Data visuals
